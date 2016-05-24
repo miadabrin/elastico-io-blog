@@ -1,36 +1,800 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="fa">
+<!doctype html>
+<html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>الستیکو</title>
 
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/google/code-prettify/master/loader/prettify.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/material-rtl.css">
+    <style>
+        #view-source {
+            position: fixed;
+            display: block;
+            left: 0;
+            bottom: 0;
+            margin-left: 40px;
+            margin-bottom: 40px;
+            z-index: 900;
+        }
+    </style>
+</head>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout__header-row">
+            <h3>
+                <img src="images/logo.png" style="width: 50px;">
+                الستیکو</h3>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+            <!--<a href="#home" class="mdl-layout__tab">خانه</a>-->
+            <a href="#articles" class="mdl-layout__tab is-active">خانه</a>
+            <a href="#registration" class="mdl-layout__tab">ثبت نام</a>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">الستیکو</span>
+        <nav class="mdl-navigation">
+            <!--<a href="#home" class="mdl-navigation__link">خانه</a>-->
+            <a href="#articles" class="mdl-navigation__link">خانه</a>
+            <a href="#registration" class="mdl-navigation__link">ثبت نام</a>
+        </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="articles">
+            <section class="section--center mdl-grid mdl-grid--no-spacing">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <h4>بلاگ الستیکو چیست؟</h4>
+                    <h6>در این سایت راجع به Docker و Kubernetes خواهید شنید:</h6>
+
+                    <ul class=" toc">
+                        <h4>فهرست مفالات</h4>
+                        <a href="#why-you-need-docker.html">چرا به داکر نیاز دارید؟</a>
+                        <a href="#docker-basic-concepts.html">مفاهیم پایه ای داکر</a>
+                        <a href="#useful-docker-commands.html">دستورات پرکاربرد داکر</a>
+                        <a href="#jboss-docker-tutorial.html">شیوه استفاده از داکر برای اجرای یک برنامه تحت وب جاوا</a>
+                        <a href="#how-to-write-dockerfile.html">روش نوشتن یک Dockerfile</a>
+                        <a href="#install-docker-centos7.html">شیوه نصب داکر روی لینوکس CentOS 7</a>
+                        <a href="#install-docker-windows.html">طریقه نصب داکر روی ویندوز</a>
+                    </ul>
+                    <br/>
+
+                    <article class="mdl-tabs__panel is-active" id="why-you-need-docker.html">
+                        <h4>چرا به داکر نیاز دارید؟</h4>
+
+                        <p><strong>جواب کوتاه:</strong> چون میخواهید به عنوان یک کاربر، بتوانید نرم افزارهای گوناگون را
+                            خیلی راحت و سریع نصب کنید. همچنین اگر برنامه ساز هستید نیاز دارید برنامه شما توسط کاربران به
+                            آسانی قابل اجرا باشد.</p>
+
+                        <p><strong>جواب بلند:</strong> شیوه قدیمی/فعلی نصب بسیاری از نرم افزارها به این صورت است که شما
+                            ابتدا باید بسته (package) نرم افزاری مورد نظرتان را برای سیستم عامل خودتان، مثلا به صورت یک
+                            Installer برای ویندوز یا بسته RPM برای RedHat Linux، پیدا کنید و سپس باید مطمئن شوید که پیش
+                            نیازهای لازم برای آن را نصب کرده اید و تنها پس از‌ آن است که میتوانید اقدام به نصب کنید.</p>
+
+                        <p>البته در بیشتر موارد داستان به همین جا ختم نمی شود. احتمال دارد شما برنامه ای از قبل روی
+                            سیستمتان داشته باشید که با این برنامه جدید تداخل کند. محتمل ترین حالت وجود نسخه قدیمی تری از
+                            همین برنامه است که نیاز دارید ابتدا آن را از روی سیستم حذف کنید. حذف کردن برنامه ها هم در
+                            برخی موارد کار ساده ای نیست و ممکن است حتی پس از حذف یک برنامه نیاز داشته باشید بخشهایی از
+                            آن را که بر روی سیستم شما باقی مانده است تک تک پیدا کرده و پاک کنید تا تداخل کاملا برطرف
+                            شود. در این قبیل موارد تغییرات در فایلهای سیستمی معمولا بیشترین دردسر را ایجاد میکند چون به
+                            نوعی میتوان گفت سیستم شما را آلوده کرده است و برگرداندن آن به وضعیت قبلی کار آسانی نیست.</p>
+
+                        <p>مشکل بزرگتر زمانی پیش میاید که برنامه جدید با یکی از برنامه های موجود تداخل میکند ولی شما به
+                            هر دوی آنها نیاز دارید. مثالهای معروف آن نصب نسخه های متفاوتی از ابزارهای یک زبان برنامه
+                            نویسی است. مثلا برای داشتن نسخه های متفاوتی از ruby به صورت همزمان روی یک سیستم به مشکل
+                            برخواهید خورد و نیاز دارید از یک برنامه دیگر به نام rvm استفاده کنید. متاسفانه برای بیشتر
+                            بسته های نرم افزاری چنین امکانی اصلا وجود ندارد و شما باید تنها یک نسخه را در هر زمان نصب
+                            کنید.</p>
+
+                        <p>استفاده از ماشینهای مجازی (Virtual Machine) تا حدی میتواند در حل این مشکلات کمک کند ولی حجیم
+                            بودن و سرعت پایین نصب و راه اندازی مانع از همه گیر شدن این روش شده است. همچنین تمام برنامه
+                            هایی که روی یک ماشین مجازی خاص نصب میشوند همچنان در معرض این مشکلات قرار دارند.</p>
+
+                        <p>داکر به عنوان یک ابزار روزمره این امکان را فراهم میکند که شما بدون نیاز به آلوده کردن سیستم
+                            خودتان هر نرم افزاری را که به صورت کانتینر ساخته شده باشد به سرعت و به صورت کاملا مجزا نصب و
+                            اجرا کنید. زمانی هم که به این کانتینر احتیاج نداشته باشید با حذف کردن آن تمامی آثار آن از
+                            سیستم شما پاک خواهد شد.</p>
+
+                        <p>به این ترتیب مثلا شما میتوانید نسخه های متفاوتی از یک محصول را به صورت همزمان نصب و اجرا کنید
+                            بدون اینکه آنها از وجود یکدیگر با خبر شوند. سادگی و سرعت استفاده از کانتینرها نیز به مراتب
+                            بیشتر از ماشینهای مجازی است و همین امر باعث میشود استفاده از آنها در کار روزمره عملی تر
+                            باشد.</p>
+
+                        <p>برای آشنایی بیشتر با این تکنولوژی میتوانید <a
+                                href="http://taakestan.com/index.php/2012-09-09-10-30-14/53-docker">وبینار تاک با موضوع
+                            آشنایی مقدماتی با داکر</a> را مشاهده کنید و اگر فکر میکنید که همین حالا به داکر نیاز دارید
+                            میتوانید <a href="http://elastico.io/blog/install-docker-windows.html">به این ترتیب آن را
+                                روی ویندوز نصب کنید</a>.</p>
+
+                        <p>به عنوان یک برنامه ساز نیز ایده بسیار خوبیست که برنامه بعدیتان را به صورت یک کانتینر ارایه
+                            کنید تا دیگران بتوانند به راحتی آن را نصب و اجرا کنند. مثلا برای <a
+                                    href="http://elastico.io/blog/jboss-docker-tutorial.html">برنامه های تحت وب جاوا
+                                میتوانید به این روش آنها را در یک کانتینر قرار دهید</a>.</p>
+
+
+                    </article>
+                    <hr/>
+
+                    <article class="mdl-tabs__panel" id="docker-basic-concepts.html">
+                        <h4>مفاهیم پایه ای داکر</h4>
+
+                        <p>مجموعه ابزارهای داکر به طور کلی توسعه و انتشار نرم افزارها را ساده میکند و این کار را از طریق فراهم کردن یک راه حل مناسب برای ساخت و به اشتراک گذاشتن تصویری قابل اجرا از یک برنامه کاربردی انجام میدهد. یک تصویر داکر همچنین بخشهای زیادی از سیستم عامل بجز هسته آن را شامل میشود.</p>
+
+                        <p>پیش از مطالعه این مطلب اگر در ضرورت استفاده از داکر تردید دارید میتوانید مقاله <a href="http://elastico.io/blog/why-you-need-docker.html">چرا به داکر نیاز دارید</a> را مطالعه کنید.</p>
+
+                        <h4>بخشهای اصلی اکوسیستم داکر</h4>
+
+                        <p>مجموعه ابزارها و سرویسهای داکر را میتوان در سه بخش اصلی دسته بندی کرد:</p>
+
+                        <ul>
+                            <li><strong>ساخت:</strong> تولید یک تصویر (image) داکر که یک برنامه کاربردی به همراه تمام وابستگیهای آن را در خود دارد. هر تصویر معمولا با ساز و کار <code class="prettyprint prettyprinted"><span class="pln">docker build</span></code> از روی یک <code class="prettyprint prettyprinted"><span class="typ">Dockerfile</span></code> و با اضافه کردن یک یا چند برنامه کاربردی به یک تصویر پایه ساخته میشود.</li>
+                            <li><strong>اجرا:</strong> کانتینرها (container) که در واقع تصاویر در حال اجرا هستند را میتوان به سادگی و با سرعت زیاد در تعداد بالا ایجاد و سپس متوقف یا کاملا حذف کرد. مزیت اصلی داکر در این بخش جداسازی کامل این کانتینرها از یکدیگر در زمان اجراست، به طوری که هر یک از آنها گمان میکنند روی یک سیستم عامل کاملا جداگانه اجرا شده اند.</li>
+                            <li><strong>انتشار:</strong> تصاویر تولید شده در داکر از طریق سرویسی به نام registry و با کمک دستورات <code class="prettyprint prettyprinted"><span class="pln">docker push</span></code> و <code class="prettyprint prettyprinted"><span class="pln">docker pull</span></code> به آسانی قابل انتشار و به اشتراک گذاری هستند. همچنین سرویس آنلاین Docker Hub یک نمونه از این registry است که برای مصارف عمومی به صورت رایگان در اختیار کاربران قرار داده شده است. <em>لازم به یادآوری است که اگر در استفاده از این سرویس با مشکلاتی برای دانلود تصاویر مواجه شدید، میتوانید با تنظیم یک mirror به صورتی که در <a href="https://groups.google.com/forum/#!topic/software-taak/xRmFWrozRoo">این گروه</a> گفته شده، دوباره امتحان کنید.</em></li>
+                        </ul>
+
+                        <p>برای اینکه بتوانید با این سه جنبه از داکر کار کنید نیاز دارید برنامه موتور داکر به نام <code class="prettyprint prettyprinted"><span class="pln">docker daemon</span></code> را روی سیستم خودتان یا در یک ماشین مجازی اجرا کنید. این برنامه در واقع تمام عملیاتهای درخواست شده از داکر برای ساخت، اجرا و انتشار کانتینرها را انجام میدهد. علاوه بر این، شما به یک برنامه دیگر به نام docker client نیاز دارید که دستورات را از خط فرمان میگیرد و به موتور داکر منتقل میکند. در سیستم عامل لینوکس هر دو این برنامه ها در قالب یک فایل اجرایی به نام <code class="prettyprint prettyprinted"><span class="pln">docker</span></code> به شما ارایه میشود. اما در سیستم عاملهای دیگر مانند ویندوز و Mac OS X تنها بخش client در فایل اجرایی <code class="prettyprint prettyprinted"><span class="pln">docker</span></code> وجود دارد و شما نیاز دارید سرویس <code class="prettyprint prettyprinted"><span class="pln">docker daemon</span><span class="pun">‍</span></code> را در یک سیستم عامل جداگانه، که در حال حاضر باید حتما لینوکس باشد، اجرا کنید. ابزار ماشین داکر (docker machine) که پایین تر درباره آن توضیح داده شده است در این مورد به شما کمک میکند.  </p>
+
+                        <p>به طور کلی هر زمان که با دستور <code class="prettyprint prettyprinted"><span class="pln">docker run</span><span class="pun">‍</span></code> کانتینری را اجرا میکنید، موتور داکر ابتدا تصویر مورد نظر را از یک registry، مانند ‌Docker Hub، دانلود میکند و سپس یک کانتینر جدید از آن تصویر ایجاد میکند. البته اگر دوباره اقدام به ساخت یک کانتینر از روی همان تصویر کنید دیگر نیازی به دانلود کردن آن نیست و بنابراین دفعات بعدی این کار با سرعت بالاتری انجام میشود.</p>
+
+                        <h4>ساختار یک تصویر داکر (docker image)</h4>
+
+                        <p>هر تصویر داکر از یک سری لایه تشکیل شده است که هر لایه تنها شامل تغییرات نسبت به لایه قبلیست. موتور داکر در زمان اجرا از فایل سیستمهایی استفاده میکند که این امکان را فراهم میکنند تا تمامی این لایه ها به صورت یک ساختار فایل یکپارچه در اختیار کانتینر قرار داده شود.</p>
+
+                        <p>یکی از برتریهای داکر نسبت به فناوری ماشینهای مجازی استفاده از همین ساختار لایه ای برای تصاویر است. این لایه بندی باعث میشود زمانی که شما یک تصویر جدید را از روی یک تصویر قبلی میسازید داکر نیازی به کپی کردن همه فایلهای تصویر قبلی ندارد و تنها کافیست که لایه جدید، شامل تغییرات فایلها را، بسازد. به این ترتیب هر لایه پس از یکبار ساخته شدن دیگر تغییر نمیکند و به راحتی میتوان آن را بین تصاویر گوناگون به اشتراک گذاشت بدون اینکه نیاز باشد داکر کاری برای جلوگیری از تداخل فایلها انجام دهد. این روش مصرف دیسک سخت را به میزان زیادی بهینه میکند.</p>
+
+                        <p>در این مدل هر تصویر داکر از یک تصویر پایه (base image)‌ ساخته میشود. این تصویر پایه ممکن است یک سیستم عامل سبک مانند لینوکس Debian یا Alpine باشد، ولی حتی میتوان از یک سیستم عامل بزرگ مانند Ubuntu شروع کرد، اگر چه این کار معمولا توصیه نمی شود. این تصویر در صورتی که از قبل روی سیستم شما وجود نداشته باشد در زمان اولین ساخت از داکر هاب دانلود میشود. سپس شما میتوانید تصاویر بعدی را حتی از روی تصاویری که خودتان قبلا تولید کرده اید بسازید.</p>
+
+                        <p>به عنوان مثال شما میتوانید از یک تصویر Debian شروع کنید و سپس با نصب محیط اجرایی جاوا و یک وب سرور مانند Tomcat روی آن، تصویری بسازید که پایه تصاویر بعدی شما شود. برای این کار نیاز به نوشتن یک فایل به نام <code class="prettyprint prettyprinted"><span class="typ">Dockerfile</span></code> دارید که شامل یک تصویر پایه و سپس دستوراتی برای نصب برنامه ها، اضافه کردن فایلها و در انتها مشخص کردن دستوریست که در زمان ایجاد کانتینر اجرا خواهد شد. در نهایت وقتی شما با استفاده از دستور <code class="prettyprint prettyprinted"><span class="pln">docker build</span></code> درخواست تولید این تصویر را صادر میکنید داکر دستورات داخل این فایل را اجرا میکند و به این ترتیب لایه های جدیدی برای تصویر شما تولید میشود. سپس شما میتوانید این تصویر را با دستور <code class="prettyprint prettyprinted"><span class="pln">docker push</span></code> به یک registry بفرستید و نام آن را با دیگران به اشتراک بگذارید تا به راحتی بتوانند آن را دانلود و اجرا کنند.</p>
+
+                        <h4>ساختار یک کانتینر (container)</h4>
+
+                        <p>یک کانتینر از اجرای یک یا چند پردازه (process) بر روی فایلهای یک تصویر بدست می آید. داکر اطلاعات بیشتری مانند اینکه کدام پورتهای شبکه (network port) باید در اختیار این پردازه ها قرار بگیرد را هم مدیریت میکند. از مهمترین نکات این است که تغییراتی که هر کانتینر روی فایلهای خود ایجاد میکند به صورت جداگانه و در یک لایه جدید ذخیره میشود و به این ترتیب تصویر اصلی هیچگاه تغییر نمیکند.</p>
+
+                        <p>با توقف یک کانتینر با استفاده از دستور <code class="prettyprint prettyprinted"><span class="pln">docker stop</span><span class="pun">‍</span></code> پردازه های آن متوقف میشوند ولی تغییرات فایلهای آن همچنان قابل بازیابی هستند تا زمانی که لایه های متعلق به آن کانتینر با دستور <code class="prettyprint prettyprinted"><span class="pln">docker rm</span></code> کاملا حذف شوند. برای آشنایی بیشتر با دستورات داکر میتوانید مقاله <a href="http://elastico.io/blog/useful-docker-commands.html">دستورات پرکاربرد داکر</a> را مطالعه کنید.</p>
+
+                        <p>همانطور که گفته شد مزیت اصلی داکر در جداسازی کامل فضای پردازه های کانتینرهای مختلف از یکدیگر است، به طوری که هر کانتینر تصور میکند تنها پردازه های خودش در حال حاضر در حال اجرا هستند. این جداسازی همچنین شامل فایل سیستم، فضای کاربری، پشته شبکه (network stack)‌ و بخشهای دیگری از سیستم عامل میشود. از این طریق داکر امکان قرار دادن محدودیتهای گوناگون روی دسترسی هر کانتینر به منابع مشترک سیستم را فراهم میکند.</p>
+
+                        <h4>ماشین داکر (docker machine)</h4>
+
+                        <p>ماشین داکر یک ابزار جانبیست که ایجاد و مدیریت موتورهای داکر روی رایانه های شخصی یا سرویسهای ابری را تسهیل میکند. به طور مختصر این ابزار امکان ایجاد سرورهایی را فراهم میکند که موتور داکر را بر روی خود دارند و به سادگی اجازه میدهد از طریق پیکربندی docker client روی ماشین خودتان به این سرورها متصل شوید و با موتور داکر کار کنید.</p>
+
+                        <p>برای آشنایی بیشتر با این فناوری میتوانید <a href="http://taakestan.com/index.php/2012-09-09-10-30-14/53-docker">وبینار تاک با موضوع آشنایی مقدماتی با داکر</a> را مشاهده کنید یا <a href="http://elastico.io/blog/useful-docker-commands.html">دستورات پرکاربرد داکر</a> را مطالعه کنید.</p>
+
+                    </article>
+                    <hr/>
+
+                    <article class="mdl-tabs__panel" id="useful-docker-commands.html">
+                        <h4>دستورات پرکاربرد داکر</h4>
+
+                        <p>در این مقاله سعی میکنیم با دستورات بسیار پرکاربرد داکر آشنا شویم.</p>
+
+                        <p>جهت یادگیری بهتر و امتحان کردن این دستورات نیاز دارید ابتدا داکر را نصب کرده باشید. میتوانید <a href="http://elastico.io/blog/install-docker-windows.html">طریقه نصب داکر روی ویندوز</a> را در همین سایت مطالعه کنید یا در صورت تمایل برای دسترسی مجانی و موقت به یک سرور مجازی لینوکس برای یادگیری داکر <a href="https://docs.google.com/forms/d/1fIYtXM6UaV5pFRBAkNKVNHzBnUg157Sedxds5xYPWDI/viewform?usp=send_form">این فرم کوتاه</a> را پر کنید.</p>
+
+                        <h4>دستور  pull</h4>
+
+                        <p>برای دانلود کردن یک تصویر (image) جدید میتوانید از دستور pull استفاده کنید. این دستور تمام لایه های یک تصویر را، در صورتی که قبلا روی ماشین شما دانلود نشده باشند، از کتابخانه داکر دانلود میکند:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    docker pull debian</span></code></pre>
+
+                        <p>این نکته که تصاویر داکر میتوانند لایه های مشترک با یکدیگر داشته باشند تاثیر زیادی در افزایش سرعت دانلود و اجرای کانتینرها دارد.</p>
+
+                        <h4>دستور run</h4>
+
+                        <p>برای ایجاد یک کانتینر جدید و اجرای یک shell که به شما یک خط فرمان (command line) تازه در داخل همان کانتینر میدهد، میتوانید دستور زیر را اجرا کنید:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    docker run </span><span class="pun">-</span><span class="pln">ti </span><span class="pun">--</span><span class="pln">name my_container_name debian </span><span class="pun">/</span><span class="pln">bin</span><span class="pun">/</span><span class="pln">bash</span></code></pre>
+
+                        <p>پارامتر <code class="prettyprint prettyprinted"><span class="pun">-</span><span class="pln">ti</span></code> باعث میشود که کانتینر شما به محض اجرای دستور، که در این مثال <code class="prettyprint prettyprinted"><span class="str">/bin/</span><span class="pln">bash</span></code> است، خروجیهای آن را برای شما چاپ کند و در صورت نیاز منتظر ورودی از صفحه کلید بماند. در این حالت با خروج از این shell، مثلا با اجرای دستور <code class="prettyprint prettyprinted"><span class="kwd">exit</span></code>، اجرای کانتینر نیز متوقف میشود.</p>
+
+                        <p>اگر بخواهید فایلهای کانتینر بلافاصله پس از توقف، از روی سیستم کاملا حذف شوند میتوانید از پارامتر <code class="prettyprint prettyprinted"><span class="pun">--</span><span class="pln">rm</span></code> استفاده کنید:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    docker run </span><span class="pun">--</span><span class="pln">rm </span><span class="pun">-</span><span class="pln">ti debian </span><span class="pun">/</span><span class="pln">bin</span><span class="pun">/</span><span class="pln">bash</span></code></pre>
+
+                        <p>در مقابل اگر بخواهید کانتینری به محض اجرا به پس زمینه برود و همچنان به اجرای دستور ادامه دهد میتوانید از پارامتر <code class="prettyprint prettyprinted"><span class="pun">-</span><span class="pln">d</span></code> استفاده کنید:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    docker run </span><span class="pun">-</span><span class="pln">d </span><span class="pun">--</span><span class="pln">name my_server nginx</span></code></pre>
+
+                        <p>دقت کنید که در این حالت کانتینر شما تا زمانی که اجرای دستور به پایان نرسد یا شما آن را متوقف نکنید در حال اجرا باقی میماند.</p>
+
+                        <h4>دستور ps</h4>
+
+                        <p>این دستور کانتینرهای در حال اجرا را به شما نشان میدهد:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    docker ps</span></code></pre>
+
+                        <p>همچنین اگر از پارامتر <code class="prettyprint prettyprinted"><span class="pun">-</span><span class="pln">a</span></code> استفاده کنید میتوانید کانتینرهای متوقف شده را نیز مشاهده کنید.</p>
+
+                        <h4>دستور logs</h4>
+
+                        <p>برای دیدن خروجی یک کانتینر در حال اجرا میتوانید دستور زیر را بکار ببرید:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    docker logs my_server</span></code></pre>
+
+                        <p>اگر میخواهید منتظر بمانید تا خروجیهای جدید را به محض تولید شدن مشاهده کنید میتوانید از پارامتر <code class="prettyprint prettyprinted"><span class="pun">-</span><span class="pln">f</span></code> استفاده کنید.</p>
+
+                        <h4>دستور exec</h4>
+
+                        <p>اگر کانتینری در حال اجرا باشد میتوانید با دستور زیر یک shell در داخل آن اجرا کنید که به شما یک خط فرمان در داخل همان کانتینر برای اجرای دستورات جدید میدهد:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    docker </span><span class="kwd">exec</span><span class="pln"> </span><span class="pun">-</span><span class="pln">ti my_server </span><span class="pun">/</span><span class="pln">bin</span><span class="pun">/</span><span class="pln">sh</span></code></pre>
+
+                        <p>این کار عموما برای خطایابی در زمان تست استفاده میشود و برای سیستمهای production توصیه نمیشود.</p>
+
+                        <h4>دستور stop</h4>
+
+                        <p>اگر کانتینری در حال اجرا باشد میتوانید با دستور زیر آن را متوقف کنید:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    docker stop my_server</span></code></pre>
+
+                        <p>دقت کنید که در این حالت اجرای کانتینر متوقف میشود ولی فایلهای آن همچنان روی سیستم باقی میمانند و قابل بازیابی هستند. با استفاده از دستور <code class="prettyprint prettyprinted"><span class="pln">docker ps </span><span class="pun">-</span><span class="pln">a</span></code> میتوانید کانتینر متوقف شده را نیز مشاهده کنید.</p>
+
+                        <h4>دستور kill</h4>
+
+                        <p>اگر کانتینری به دستور stop به خوبی پاسخ ندهد، یعنی اجرای آن متوقف نشود، میتوانید از این دستور برای توقف کامل آن استفاده کنید:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    docker kill my_server</span></code></pre>
+
+                        <p>در این حالت نیز همچنان فایلهای کانتینر روی سیستم باقی میمانند.</p>
+
+                        <p>اگر مثلا در انتهای روز قصد دارید با یک دستور تمامی کانتینرهای روی سیستمتان را متوقف کنید، میتوانید این فرمان را اجرا کنید:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    docker kill $</span><span class="pun">(</span><span class="pln">docker ps </span><span class="pun">-</span><span class="pln">q</span><span class="pun">)</span></code></pre>
+
+                        <h4>دستور rm</h4>
+
+                        <p>این دستور فایلهای یک کانتینر متوقف شده را از روی سیستم پاک میکند:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    docker rm my_server</span></code></pre>
+
+                        <p>اگر میخواهید تمامی فایلها را، شامل آنهایی که به صورت volume برای کانتینر تعریف شده اند، حذف کنید از پارامتر <code class="prettyprint prettyprinted"><span class="pun">-</span><span class="pln">v</span></code> استفاده کنید.</p>
+
+                        <p>در مواقعی هم که میخواهید تمامی کانتینرهای متوقف شده را یکباره حذف کنید میتوانید از این دستور استفاده کنید:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    docker rm $</span><span class="pun">(</span><span class="pln">docker ps </span><span class="pun">-</span><span class="pln">a </span><span class="pun">-</span><span class="pln">q</span><span class="pun">)</span></code></pre>
+
+                        <h4>دستور rmi</h4>
+
+                        <p>برای حذف یک تصویر (image) داکر که دیگر نیازی به آن ندارید این دستور را اجرا کنید:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    docker rmi my_image_name</span></code></pre>
+
+                        <p>در نهایت اگر روی سیستمتان با کمبود فضای دیسک سخت مواجه شده اید میتوانید با دستور زیر تمامی تصاویری را که به صورت موقت تولید شده اند و معمولا کاربرد دایمی ندارند پاک کنید:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    docker rmi $</span><span class="pun">(</span><span class="pln">docker images </span><span class="pun">-</span><span class="pln">q </span><span class="pun">-</span><span class="pln">f dangling</span><span class="pun">=</span><span class="kwd">true</span><span class="pun">)</span></code></pre>
+
+                        <p>اگر به هنگام اجرای کانتینرها با مشکلاتی برای دانلود image ها از Docker Hub مواجه شدید، میتوانید با تنظیم یک mirror به صورتی که در <a href="https://groups.google.com/forum/#!topic/software-taak/xRmFWrozRoo">این گروه</a> گفته شده، دوباره این کار را امتحان کنید.</p>
+
+                    </article>
+                    <hr/>
+
+                    <article class="mdl-tabs__panel" id="jboss-docker-tutorial.html">
+                        <h4>شیوه استفاده از داکر برای اجرای یک برنامه تحت وب جاوا</h4>
+
+                        <p>برای اجرای این مثال نیاز دارید ابتدا داکر را نصب کرده باشید. <a href="http://elastico.io/blog/install-docker-windows.html">طریقه نصب داکر روی ویندوز</a> را میتوانید در همین سایت مطالعه کنید. </p>
+
+                        <p>همچنین تمامی کدها و فایلهای مورد استفاده در این راهنما در گیت هاب در دسترس شماست:
+                            https://github.com/etcinitd/wildfly-docker-deployment-example</p>
+
+                        <p>با فرض اینکه برنامه جاوایی خود را کامپایل کرده و به صورت یک فایل war درآورده اید، برای اجرای آن با استفاده از ابزار داکر میتوانید مراحل زیر را طی کنید. برای راحتی شما یک فایل war به صورت نمونه از قبل فراهم شده است. </p>
+
+                        <ul>
+                            <li><p>این راهنما از نسخه ۱۰ سرور جی باس (jboss/wildfly) روی داکر استفاده میکند. ابتدا یک فایل با نام <code class="prettyprint prettyprinted"><span class="typ">Dockerfile</span></code> و با این محتویات ایجاد کنید:</p>
+                            </li>
+                        </ul>
+<pre><code class="prettyprint prettyprinted"><span class="pln">FROM jboss</span><span class="pun">/</span><span class="pln">wildfly</span><span class="pun">:</span><span class="lit">10.0</span><span class="pun">.</span><span class="lit">0.Final</span><span class="pln">
+ADD node</span><span class="pun">-</span><span class="pln">info</span><span class="pun">.</span><span class="pln">war </span><span class="pun">/</span><span class="pln">opt</span><span class="pun">/</span><span class="pln">jboss</span><span class="pun">/</span><span class="pln">wildfly</span><span class="pun">/</span><span class="pln">standalone</span><span class="pun">/</span><span class="pln">deployments</span><span class="pun">/</span></code></pre>
+
+                        <p>این فایل مخصوص داکر است و برای ساخت یک تصویر (image) داکر که برنامه جاوایی مورد نظر شما را در خود دارد استفاده میشود.</p>
+
+                        <p>خط اول این فایل تصویر پایه (base image) را  مشخص میکند که در این مثال سرور jboss/wildfly از کتابخانه داکر است. توضیحات بیشتر راجع به این تصویر خاص و نسخه های متفاوت آن را میتوانید در <a href="https://hub.docker.com/r/jboss/wildfly">صفحه سایت داکر هاب</a> مشاهده کنید. </p>
+
+                        <p>خط دوم فایل war را که حاوی برنامه جاواست و از قبل ساخته شده، به این تصویر اضافه میکند و در آدرس مورد نظر برای سرور جی باس در داخل کانتینر قرار میدهد. بجای <code class="prettyprint prettyprinted"><span class="pln">node</span><span class="pun">-</span><span class="pln">info</span><span class="pun">.</span><span class="pln">war</span></code> میتوانید نام فایل war برنامه خودتان را بنویسید.</p>
+
+                        <p><em>نکته جانبی:</em> به طور کلی در داکر هر تصویر (image) میتواند به عنوان پایه ای برای تصاویر جدید بکار رود و به این ترتیب لایه های متعددی از تصاویر یک تصویر نهایی را تشکیل میدهند. این ویژگی یکی از قابلیتهای مهم و اصلی داکر برای تولید و پخش ساده و سریع تصاویر است چون برای تولید یا انتقال یک تصویر تنها نیاز به ایجاد یا ارسال تفاوتهای بین دو تصویر است که به حجمی بسیار کمتر از تک تک تصاویر نیاز دارد.</p>
+
+                        <ul>
+                            <li><p>فایل war برنامه خود را، که در مثال ما <code class="prettyprint prettyprinted"><span class="pln">node</span><span class="pun">-</span><span class="pln">info</span><span class="pun">.</span><span class="pln">war</span></code> نام دارد، در همان پوشه ای که <code class="prettyprint prettyprinted"><span class="typ">Dockerfile</span></code> قرار دارد کپی کنید.</p></li>
+                            <li><p>در همان پوشه، تصویر (image) داکر را با اجرای دستور زیر بسازید. دقت کنید که در این صورت نام تصویر تولید شده wildfly-app خواهد بود: </p>
+                            </li>
+
+                            <pre><code class="prettyprint prettyprinted"><span class="pln">docker build </span><span class="pun">--</span><span class="pln">tag</span><span class="pun">=</span><span class="pln">wildfly</span><span class="pun">-</span><span class="pln">app </span><span class="pun">.</span></code></pre>
+                            <li><p>در نهایت، کانتینر را با استفاده از دستور زیر اجرا کنید. این کار برنامه شما را در زمان شروع به کار کانتینر به صورت خودکار روی پرت (port) شماره 8080 اجرا میکند: <code class="prettyprint prettyprinted"><span class="pln">docker run </span><span class="pun">-</span><span class="pln">it </span><span class="pun">-</span><span class="pln">p </span><span class="lit">8080</span><span class="pun">:</span><span class="lit">8080</span><span class="pln"> wildfly</span><span class="pun">-</span><span class="pln">app</span></code></p></li>
+                            <li><p>برای تست برنامه، اگر از ابزار docker-machine استفاده میکنید، آدرس IP ماشین مجازی داکر خودتان را به این طریق پیدا کنید:</p>
+                            </li>
+
+<pre><code class="prettyprint prettyprinted"><span class="pln">$ docker</span><span class="pun">-</span><span class="pln">machine ls
+NAME      ACTIVE   DRIVER       STATE     URL
+</span><span class="kwd">default</span><span class="pln">            virtualbox   </span><span class="typ">Running</span><span class="pln">   tcp</span><span class="pun">:</span><span class="com">//&lt;docker-machine-ip&gt;:2376</span></code></pre>
+
+                            <li><p>سپس با قرار دادن آدرس IP مرحله قبل در مرورگر، یا ابزاری مانند curl به صورت زیر، میتوانید صفحه وب برنامه جاوایی اجرا شده را مشاهده کنید:</p>
+                            </li>
+                        </ul>
+
+<pre><code class="prettyprint prettyprinted"><span class="pln">$ curl http</span><span class="pun">:</span><span class="com">//&lt;docker-machine-ip&gt;:8080/node-info/</span><span class="pln">
+</span><span class="typ">Hostname</span><span class="pun">:</span><span class="pln"> </span><span class="lit">4e3daa7ea20f</span><span class="pln">
+</span><span class="typ">Java</span><span class="pln"> </span><span class="typ">Runtime</span><span class="pun">:</span><span class="pln"> </span><span class="typ">OpenJDK</span><span class="pln"> </span><span class="typ">Runtime</span><span class="pln"> </span><span class="typ">Environment</span><span class="pln"> </span><span class="lit">1.8</span><span class="pun">.</span><span class="lit">0_71</span><span class="pun">-</span><span class="pln">b15
+OS</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Linux</span><span class="pln"> amd64 </span><span class="lit">4.0</span><span class="pun">.</span><span class="lit">9</span><span class="pun">-</span><span class="pln">boot2docker</span></code></pre>
+
+                        <p>اگر به هنگام اجرای کانتینرها با مشکلاتی برای دانلود image ها از Docker Hub مواجه شدید، میتوانید با تنظیم یک mirror به صورتی که در <a href="https://groups.google.com/forum/#!topic/software-taak/xRmFWrozRoo">این گروه</a> گفته شده، دوباره این کار را امتحان کنید.</p>
+
+                        <p>اگر فکر میکنید برای کار با داکر نیاز به کمک بیشتری دارید و یا علاقه مند هستید که در آینده به یک سرور مجازی برای یادگیری داکر دسترسی داشته باشید میتوانید <a href="https://docs.google.com/forms/d/1fIYtXM6UaV5pFRBAkNKVNHzBnUg157Sedxds5xYPWDI/viewform?usp=send_form">این فرم کوتاه</a> را پر کنید تا به یک گروه Slack به نام <strong>elastico-users</strong> که برای همین کار ایجاد شده است دعوت شوید. در آنجا میتوانید از اعضای با تجربه تر گروه هم کمک بگیرید.</p>
+
+                    </article>
+                    <hr/>
+                    
+                    <article class="mdl-tabs__panel" id="how-to-write-dockerfile.html" >
+                        <h4>روش نوشتن یک Dockerfile</h4>
+
+                        <p>یکی از بهترین روشهای تولید یک تصویر داکر (docker image)، نوشتن یک Dockerfile و سپس استفاده از دستور <code class="prettyprint prettyprinted"><span class="pln">docker build</span></code> است. این روش به دلیل سادگی و سازگاری با متدولوژی زیرساخت به صورت کد (Infrastructure as Code) به متداولترین راه برای تولید تصاویر داکر تبدیل شده است.</p>
+
+                        <p><em>جهت اجرای دستورات گفته شده در این مقاله نیاز دارید قبلا داکر را نصب کرده باشید. روش نصب داکر روی <a href="http://elastico.io/blog/install-docker-windows.html">ویندوز</a> یا <a href="http://elastico.io/blog/install-docker-centos7.html">لینوکس CentOS</a> را میتوانید در همین سایت مطالعه کنید. همچنین برای یادگیری بهتر این مطلب ممکن است آشنایی با <a href="http://elastico.io/blog/docker-basic-concepts.html">مفاهیم پایه ای داکر</a> به شما کمک کند.</em></p>
+
+                        <h4>ساده ترین Dockerfile</h4>
+
+                        <p>ساده ترین Dockerfile میتواند تنها شامل یک خط باشد که مشخص میکند کدام تصویر قرار است به عنوان تصویر پایه برای تولید یک تصویر جدید بکار گرفته شود. به عنوان مثال کافیست در یک پوشه فایلی با این محتویات و با نام <code class="prettyprint prettyprinted"><span class="typ">Dockerfile</span></code> ایجاد کنید:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    FROM debian</span><span class="pun">:</span><span class="pln">wheezy</span></code></pre>
+
+                        <p>سپس میتوانید با اجرای دستور <code class="prettyprint prettyprinted"><span class="pln">docker build </span><span class="pun">-</span><span class="pln">t </span><span class="kwd">my</span><span class="pun">-</span><span class="pln">first</span><span class="pun">-</span><span class="pln">image $PWD</span></code> در همان پوشه، اولین تصویر داکر خود را بسازید. در این حالت تصویر جدید کاملا مشابه تصویر پایه خواهد بود، که در این مثال نسخه Wheezy از سیستم عامل Debian است.</p>
+
+                        <p>در نهایت با اجرای دستور <code class="prettyprint prettyprinted"><span class="pln">docker images</span></code> میتوانید تمامی تصاویر موجود روی ماشین داکر خودتان را لیست کنید که شامل تصویر جدید نیز میشود:</p>
+
+<pre><code class="prettyprint prettyprinted"><span class="pln">    $ docker images
+    REPOSITORY         TAG       IMAGE ID       CREATED        SIZE
+    debian             wheezy    </span><span class="lit">2e9c7e5da19c</span><span class="pln">   </span><span class="lit">12</span><span class="pln"> days ago    </span><span class="lit">84.92</span><span class="pln"> MB
+    </span><span class="kwd">my</span><span class="pun">-</span><span class="pln">first</span><span class="pun">-</span><span class="pln">image     latest    </span><span class="lit">2e9c7e5da19c</span><span class="pln">   </span><span class="lit">12</span><span class="pln"> days ago    </span><span class="lit">84.92</span><span class="pln"> MB</span></code></pre>
+
+                        <p>همانطور که مشاهده میکنید شناسه های (ID) هر دو این تصاویر دقیقا یکسان هستند و حتی با اینکه تصویر جدید لحظاتی قبل تولید شده است، زمان ایجاد آن چند روز قبل و همزمان با تصویر پایه نشان داده میشود. این بدین دلیل است که دستور <code class="prettyprint prettyprinted"><span class="pln">docker build</span><span class="pun">‍</span></code> تشخیص میدهد که تصویر جدید هیچ تغییراتی نسبت به تصویر پایه ندارد و بنابراین نیازی به اختصاص فضا و شناسه جدید نیست. در واقع با این کار تنها یک نام جدید برای همان تصویر قبلی تولید شده است که این کار را میتوان با کمک دستور <code class="prettyprint prettyprinted"><span class="pln">docker tag</span></code> نیز به سادگی و بدون نیاز به Dockerfile انجام داد.</p>
+
+                        <h4>اضافه کردن فایل به تصویر</h4>
+
+                        <p>اگر فایلی مثلا به نام <code class="prettyprint prettyprinted"><span class="pln">test</span><span class="pun">.</span><span class="pln">sh</span></code> در همان پوشه داشته باشید میتوانید با اضافه کردن یک خط دیگر در Dockerfile این فایل را به مجموعه فایلهای موجود در تصویر خود اضافه کنید:</p>
+
+<pre><code class="prettyprint prettyprinted"><span class="pln">    FROM debian</span><span class="pun">:</span><span class="pln">wheezy
+    COPY test</span><span class="pun">.</span><span class="pln">sh </span><span class="pun">/</span><span class="pln">test</span><span class="pun">.</span><span class="pln">sh</span></code></pre>
+
+                        <p>در این حالت خروجی دستور <code class="prettyprint prettyprinted"><span class="pln">docker build</span></code> به صورت زیر خواهد بود:</p>
+
+<pre><code class="prettyprint prettyprinted"><span class="pln">    $ docker build </span><span class="pun">-</span><span class="pln">t </span><span class="kwd">my</span><span class="pun">-</span><span class="pln">second</span><span class="pun">-</span><span class="pln">image </span><span class="pun">.</span><span class="pln">
+    </span><span class="typ">Sending</span><span class="pln"> build context to </span><span class="typ">Docker</span><span class="pln"> daemon  </span><span class="lit">2.56</span><span class="pln"> kB
+    </span><span class="typ">Step</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> FROM debian</span><span class="pun">:</span><span class="pln">wheezy
+    </span><span class="pun">---&gt;</span><span class="pln"> </span><span class="lit">2e9c7e5da19c</span><span class="pln">
+    </span><span class="typ">Step</span><span class="pln"> </span><span class="lit">2</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> COPY test</span><span class="pun">.</span><span class="pln">sh </span><span class="pun">/</span><span class="pln">test</span><span class="pun">.</span><span class="pln">sh
+    </span><span class="pun">---&gt;</span><span class="pln"> </span><span class="lit">0ff656c325b7</span><span class="pln">
+    </span><span class="typ">Removing</span><span class="pln"> intermediate container </span><span class="lit">32821b2cd6d4</span><span class="pln">
+    </span><span class="typ">Successfully</span><span class="pln"> built </span><span class="lit">0ff656c325b7</span></code></pre>
+
+                        <p>نکته قابل توجه در این خروجی وجود دو مرحله در ساخت این تصویر جدید است. حالا اگر لیست تصاویر موجود را مجددا بررسی کنید متوجه خواهید شد که تصویر جدید، به نام my-second-image، شناسه ای متفاوت از تصویر پایه دارد و در زمان جدیدتری نیز ساخته شده است:</p>
+
+<pre><code class="prettyprint prettyprinted"><span class="pln">   $ docker images
+   REPOSITORY         TAG       IMAGE ID       CREATED        SIZE
+   </span><span class="kwd">my</span><span class="pun">-</span><span class="pln">second</span><span class="pun">-</span><span class="pln">image    latest    </span><span class="lit">0ff656c325b7</span><span class="pln">   </span><span class="lit">7</span><span class="pln"> minutes ago  </span><span class="lit">84.92</span><span class="pln"> MB
+   debian             wheezy    </span><span class="lit">2e9c7e5da19c</span><span class="pln">   </span><span class="lit">12</span><span class="pln"> days ago    </span><span class="lit">84.92</span><span class="pln"> MB
+   </span><span class="kwd">my</span><span class="pun">-</span><span class="pln">first</span><span class="pun">-</span><span class="pln">image     latest    </span><span class="lit">2e9c7e5da19c</span><span class="pln">   </span><span class="lit">12</span><span class="pln"> days ago    </span><span class="lit">84.92</span><span class="pln"> MB</span></code></pre>
+
+                        <p>مشابه همین روش را میتوانید برای اضافه کردن یک پوشه به تصویر بکار ببرید. دقت کنید که حجم تصویر جدید بسته به تعداد و اندازه فایلهای اضافه شده بزرگتر از تصویر پایه خواهد شد.</p>
+
+                        <p><strong>نکته:</strong> اگر بدون هیچ تغییری در هیچ یک از فایلها، دوباره اقدام به ساخت همین تصویر کنید متوجه خواهید شد که دفعه دوم فرآیند ساخت بسیار سریعتر و تقریبا به صورت آنی تمام میشود. علت این امر آن است که داکر برای هر مرحله یک تصویر میانی میسازد و تمامی این تصاویر میانی را به صورت موقت نگهداری میکند تا فرآیند ساخت را تسریع کند.</p>
+
+                        <p>برای اینکه محتویات تصویر جدید را مشاهده کنید و از وجود فایلهای خود مطمئن شوید میتوانید اقدام به اجرای یک پوسته (shell) در یک کانتینر از این تصویر کنید:</p>
+
+<pre><code class="prettyprint prettyprinted"><span class="pln">   $ docker run </span><span class="pun">--</span><span class="pln">rm </span><span class="pun">-</span><span class="pln">ti </span><span class="kwd">my</span><span class="pun">-</span><span class="pln">second</span><span class="pun">-</span><span class="pln">image </span><span class="pun">/</span><span class="pln">bin</span><span class="pun">/</span><span class="pln">sh
+   </span><span class="com"># ls -l /test.sh</span><span class="pln">
+   </span><span class="pun">-</span><span class="pln">rw</span><span class="pun">-</span><span class="pln">r</span><span class="pun">--</span><span class="pln">r</span><span class="pun">--</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> root root </span><span class="lit">0</span><span class="pln"> </span><span class="typ">May</span><span class="pln"> </span><span class="lit">16</span><span class="pln"> </span><span class="lit">13</span><span class="pun">:</span><span class="lit">32</span><span class="pln"> </span><span class="pun">/</span><span class="pln">test</span><span class="pun">.</span><span class="pln">sh</span></code></pre>
+
+                        <p>در صورت نیاز برای آشنایی بیشتر با فرامین داکر میتوانید <a href="http://elastico.io/blog/useful-docker-commands.html">دستورات پرکاربرد داکر</a> را مطالعه کنید.</p>
+
+                        <p>همچنین لازم به ذکر است که دستور <code class="prettyprint prettyprinted"><span class="pln">COPY</span></code> مشابه قدیمی تری به نام <code class="prettyprint prettyprinted"><span class="pln">ADD</span></code> دارد که در حال حاضر کمتر استفاده میشود. این دو دستور تفاوتهایی با یکدیگر دارند، مانند اینکه در دستور <code class="prettyprint prettyprinted"><span class="pln">ADD</span></code> میتوان یک آدرس وب را بجای مبدا برای اضافه کردن یک فایل به تصویر استفاده کرد.</p>
+
+                        <h4>نصب برنامه ها روی تصویر</h4>
+
+                        <p>با استفاده از دستور <code class="prettyprint prettyprinted"><span class="pln">RUN</span></code> در یک Dockerfile میتوانید برنامه هایی را که در حال حاضر روی تصویر شما نصب نیستند به آن اضافه کنید. این دستور به طور کلی برای اجرای هر برنامه ای در <strong>زمان ساخت تصویر</strong> کاربرد دارد. به عنوان مثال Dockerfile زیر برنامه unzip را روی یک تصویر پایه نصب میکند:</p>
+
+<pre><code class="prettyprint prettyprinted"><span class="pln">    FROM debian</span><span class="pun">:</span><span class="pln">wheezy
+    RUN apt</span><span class="pun">-</span><span class="kwd">get</span><span class="pln"> update
+    RUN apt</span><span class="pun">-</span><span class="kwd">get</span><span class="pln"> install </span><span class="pun">-</span><span class="pln">y </span><span class="pun">--</span><span class="kwd">no</span><span class="pun">-</span><span class="pln">install</span><span class="pun">-</span><span class="pln">recommends unzip
+    RUN rm </span><span class="pun">-</span><span class="pln">rf </span><span class="pun">/</span><span class="kwd">var</span><span class="pun">/</span><span class="pln">lib</span><span class="pun">/</span><span class="pln">apt</span><span class="pun">/</span><span class="pln">lists</span><span class="com">/*</span></code></pre>
+
+                        <p><strong>نکته:</strong> هدف از خط آخر که دستور <code class="prettyprint prettyprinted"><span class="pln">rm</span></code> را اجرا میکند حذف فایلهای غیرضروری از تصویر ساخته شده پس از نصب برنامه هاست تا حجم آن بیش از حد افزایش پیدا نکند. اما از آنجایی که هر دستور <code class="prettyprint prettyprinted"><span class="pln">RUN</span></code> در Dockerfile یک لایه جدید به تصویر اضافه میکند، بدون اینکه هیچ تغییری در لایه های قبلی بدهد، این هدف با این روش محقق نمیشود.</p>
+
+                        <p>اگر این تصویر را با اجرای دستور <code class="prettyprint prettyprinted"><span class="pln">docker build </span><span class="pun">-</span><span class="pln">t </span><span class="kwd">my</span><span class="pun">-</span><span class="pln">unzip</span><span class="pun">-</span><span class="pln">image $PWD</span></code> بسازید متوجه خواهید شد که ۴ مرحله طی میشود که منجر به ساخت ۴ لایه جدید خواهد شد. این روش در زمان توسعه یک Dockerfile بسیار مفید است زیرا هر بار که تغییری در فایلی بدهید و بخواهید تصویر خود را مجددا بسازید تنها دستوراتی که تغییر کرده اند اجرا خواهند شد و به این ترتیب فرآیند توسعه و عیب یابی با سرعت بیشتری پیش خواهد رفت. اما پس از اینکه از درستی فایل خود مطمئن شدید بهتر است برای بهینه کردن این تصویر آن را به صورت زیر بازنویسی کنید تا تنها یک دستور <code class="prettyprint prettyprinted"><span class="pln">RUN</span></code> در آن بکار گرفته شود:</p>
+
+<pre><code class="prettyprint prettyprinted"><span class="pln">   FROM debian</span><span class="pun">:</span><span class="pln">wheezy
+   RUN apt</span><span class="pun">-</span><span class="kwd">get</span><span class="pln"> update </span><span class="pun">&amp;&amp;</span><span class="pln"> \
+       apt</span><span class="pun">-</span><span class="kwd">get</span><span class="pln"> install </span><span class="pun">-</span><span class="pln">y </span><span class="pun">--</span><span class="kwd">no</span><span class="pun">-</span><span class="pln">install</span><span class="pun">-</span><span class="pln">recommends unzip </span><span class="pun">&amp;&amp;</span><span class="pln"> \
+       rm </span><span class="pun">-</span><span class="pln">rf </span><span class="pun">/</span><span class="kwd">var</span><span class="pun">/</span><span class="pln">lib</span><span class="pun">/</span><span class="pln">apt</span><span class="pun">/</span><span class="pln">lists</span><span class="com">/*</span></code></pre>
+
+                        <p>این روش تنها یک لایه به تصویر پایه اضافه میکند که منجر به ساخت تصویری کوچکتر با تعداد لایه های کمتر خواهد شد که برای انتشار و استفاده کاربران مناسبتر است.</p>
+
+                        <h4>مشخص کردن یک برنامه پیش فرض برای کانتینر</h4>
+
+                        <p>در مدل توصیه شده داکر، هر کانتینر بناست فقط پردازه هایی از یک نوع برنامه اجرایی را شامل شود. با کمک دستور <code class="prettyprint prettyprinted"><span class="pln">CMD</span></code> که معمولا در انتهای Dockerfile آورده میشود میتوان یک دستور اجرایی را به صورت پیش فرض برای یک تصویر مشخص کرد که این دستور در نهایت در <strong>زمان اجرای یک کانتینر</strong> از روی تصویر ساخته شده استفاده خواهد شد. به عنوان مثال Dockerfile زیر دستور <code class="prettyprint prettyprinted"><span class="pln">unzip</span></code> را برای اجرا روی تصویر مشخص میکند:</p>
+
+<pre><code class="prettyprint prettyprinted"><span class="pln">   FROM debian</span><span class="pun">:</span><span class="pln">wheezy
+   RUN apt</span><span class="pun">-</span><span class="kwd">get</span><span class="pln"> update </span><span class="pun">&amp;&amp;</span><span class="pln"> \
+       apt</span><span class="pun">-</span><span class="kwd">get</span><span class="pln"> install </span><span class="pun">-</span><span class="pln">y </span><span class="pun">--</span><span class="kwd">no</span><span class="pun">-</span><span class="pln">install</span><span class="pun">-</span><span class="pln">recommends unzip </span><span class="pun">&amp;&amp;</span><span class="pln"> \
+       rm </span><span class="pun">-</span><span class="pln">rf </span><span class="pun">/</span><span class="kwd">var</span><span class="pun">/</span><span class="pln">lib</span><span class="pun">/</span><span class="pln">apt</span><span class="pun">/</span><span class="pln">lists</span><span class="com">/*
+   CMD ["unzip"]</span></code></pre>
+
+                        <p>پس از ساختن یک تصویر از روی این فایل با دستور <code class="prettyprint prettyprinted"><span class="pln">docker build </span><span class="pun">-</span><span class="pln">t </span><span class="kwd">my</span><span class="pun">-</span><span class="pln">unzip</span><span class="pun">-</span><span class="pln">image $PWD</span></code> و سپس اجرای یک کانتینر روی آن، خروجی به صورت زیر خواهد بود که نشان میدهد برنامه <code class="prettyprint prettyprinted"><span class="pln">unzip</span></code> با موفقیت اجرا شده است:</p>
+
+<pre><code class="prettyprint prettyprinted"><span class="pln">   $ docker run </span><span class="pun">--</span><span class="pln">rm </span><span class="pun">-</span><span class="pln">ti </span><span class="kwd">my</span><span class="pun">-</span><span class="pln">unzip</span><span class="pun">-</span><span class="pln">image
+   </span><span class="typ">UnZip</span><span class="pln"> </span><span class="lit">6.00</span><span class="pln"> of </span><span class="lit">20</span><span class="pln"> </span><span class="typ">April</span><span class="pln"> </span><span class="lit">2009</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">by</span><span class="pln"> </span><span class="typ">Debian</span><span class="pun">.</span><span class="pln"> </span><span class="typ">Original</span><span class="pln"> </span><span class="kwd">by</span><span class="pln"> </span><span class="typ">Info</span><span class="pun">-</span><span class="pln">ZIP</span><span class="pun">.</span><span class="pln">
+   </span><span class="typ">Usage</span><span class="pun">:</span><span class="pln"> unzip </span><span class="pun">[-</span><span class="pln">Z</span><span class="pun">]</span><span class="pln"> </span><span class="pun">[-</span><span class="pln">opts</span><span class="pun">[</span><span class="pln">modifiers</span><span class="pun">]]</span><span class="pln"> file</span><span class="pun">[.</span><span class="pln">zip</span><span class="pun">]</span><span class="pln"> </span><span class="pun">[</span><span class="pln">list</span><span class="pun">]</span><span class="pln"> </span><span class="pun">[-</span><span class="pln">x xlist</span><span class="pun">]</span><span class="pln"> </span><span class="pun">[-</span><span class="pln">d exdir</span><span class="pun">]</span><span class="pln">
+     </span><span class="typ">Default</span><span class="pln"> action </span><span class="kwd">is</span><span class="pln"> to extract files </span><span class="kwd">in</span><span class="pln"> list</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">except</span><span class="pln"> those </span><span class="kwd">in</span><span class="pln"> xlist</span><span class="pun">,</span><span class="pln"> to exdir</span><span class="pun">;</span><span class="pln">
+     file</span><span class="pun">[.</span><span class="pln">zip</span><span class="pun">]</span><span class="pln"> may be a wildcard</span><span class="pun">.</span><span class="pln">  </span><span class="pun">-</span><span class="pln">Z </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="typ">ZipInfo</span><span class="pln"> mode </span><span class="pun">(</span><span class="str">"unzip -Z"</span><span class="pln"> </span><span class="kwd">for</span><span class="pln"> usage</span><span class="pun">).</span><span class="pln">
+   </span><span class="pun">...</span></code></pre>
+
+                        <p>دقت کنید که شما همچنان میتوانید در صورت نیاز برنامه های دیگری را به سادگی روی این تصویر اجرا کنید. برای این کار کافیست در انتهای دستور <code class="prettyprint prettyprinted"><span class="pln">docker run</span><span class="pun">‍</span></code> نام برنامه اجرایی مورد نظرتان را ذکر کنید تا به جای دستور پیش فرض اجرا شود.</p>
+
+                        <p><strong>نکته:</strong> دستور مشابه دیگری به نام <code class="prettyprint prettyprinted"><span class="pln">ENTRYPOINT</span></code> نیز برای مشخص کردن برنامه پیش فرض وجود دارد که تنها برای کاربردهای پیچیده تر توصیه میشود.</p>
+
+                        <p>در انتها اگر تمایل دارید با یک کاربرد واقعی از ‌Dockerfile آشنا شوید میتوانید <a href="http://elastico.io/blog/jboss-docker-tutorial.html">شیوه استفاده از داکر برای اجرای یک برنامه تحت وب جاوا</a> را مطالعه کنید.</p>
+
+                    </article>
+                    <hr/>
+
+                    <article class="mdl-tabs__panel" id="install-docker-centos7.html">
+                        <h4>شیوه نصب داکر روی لینوکس CentOS 7</h4>
+
+                        <p>روش شرح داده شده در این مقاله برای نصب داکر بر مبنای نسخه های باینری فراهم شده توسط خود شرکت داکر است.</p>
+
+                        <p><strong>پیش نیازها</strong>: برای نصب داکر نیاز به نسخه ۶۴ بیتی از این سیستم عامل روی هسته 3.10 لینوکس یا بالاتر دارد. با اجرای دستور <code class="prettyprint prettyprinted"><span class="pln">uname </span><span class="pun">-</span><span class="pln">a</span></code> میتوانید از جزییات نسخه سیستم عامل خود مطمئن شوید.</p>
+
+                        <h4>مراحل نصب با yum</h4>
+
+                        <ol>
+                            <li><p>ابتدا تمامی بسته های موجود را به روز کنید:</p>
+
+                                <pre><code class="prettyprint prettyprinted"><span class="pln">sudo yum update</span></code></pre></li>
+                            <li><p>با اجرای دستور چند خطی زیر، آدرس مخزن بسته های داکر را به لیست مخازن سیستم خودتان اضافه کنید:</p>
+                            </li>
+<pre><code class="prettyprint prettyprinted"><span class="pln">sudo tee </span><span class="pun">/</span><span class="pln">etc</span><span class="pun">/</span><span class="pln">yum</span><span class="pun">.</span><span class="pln">repos</span><span class="pun">.</span><span class="pln">d</span><span class="pun">/</span><span class="pln">docker</span><span class="pun">.</span><span class="pln">repo </span><span class="pun">&lt;&lt;-</span><span class="str">'EOF'</span><span class="pln">
+</span><span class="pun">[</span><span class="pln">dockerrepo</span><span class="pun">]</span><span class="pln">
+name</span><span class="pun">=</span><span class="typ">Docker</span><span class="pln"> </span><span class="typ">Repository</span><span class="pln">
+baseurl</span><span class="pun">=</span><span class="pln">https</span><span class="pun">:</span><span class="com">//yum.dockerproject.org/repo/main/centos/$releasever/</span><span class="pln">
+enabled</span><span class="pun">=</span><span class="lit">1</span><span class="pln">
+gpgcheck</span><span class="pun">=</span><span class="lit">1</span><span class="pln">
+gpgkey</span><span class="pun">=</span><span class="pln">https</span><span class="pun">:</span><span class="com">//yum.dockerproject.org/gpg</span><span class="pln">
+EOF</span></code></pre>
+                            <li><p>بسته داکر را نصب کنید:</p>
+
+                                <pre><code class="prettyprint prettyprinted"><span class="pln">sudo yum install docker</span><span class="pun">-</span><span class="pln">engine</span></code></pre></li>
+                            <li><p>سرویس موتور داکر را اجرا کنید:</p>
+
+                                <pre><code class="prettyprint prettyprinted"><span class="pln">sudo service docker start</span></code></pre></li>
+                            <li><p>با اجرای دستور زیر میتوانید مطمئن شوید که نصب به درستی انجام شده است:</p>
+
+                                <pre><code class="prettyprint prettyprinted"><span class="pln">sudo docker run hello</span><span class="pun">-</span><span class="pln">world</span></code></pre></li>
+                        </ol>
+
+                        <p><em>اگر به هنگام اجرای کانتینرها با مشکلاتی برای دانلود image ها از Docker Hub مواجه شدید، میتوانید با تنظیم یک mirror به صورتی که در <a href="https://groups.google.com/forum/#!topic/software-taak/xRmFWrozRoo">این گروه</a> گفته شده، دوباره این کار را امتحان کنید.</em></p>
+
+                        <p>در نهایت اگر میخواهید زمانیکه سیستم شما روشن میشود موتور داکر به صورت خودکار اجرا شود دستور زیر را اجرا کنید:</p>
+
+                        <pre><code class="prettyprint prettyprinted"><span class="pln">    sudo chkconfig docker on</span></code></pre>
+
+                        <h4>ایجاد یک گروه کاربری داکر (docker group)</h4>
+
+                        <p>از آنجایی که سرویس داکر همیشه تحت کاربر <code class="prettyprint prettyprinted"><span class="pln">root</span></code> اجرا میشود و ارتباط با آن نیز از طریق خواندن و نوشتن در یک Unix socket است که متعلق به کاربر <code class="prettyprint prettyprinted"><span class="pln">root</span></code> می باشد، برای اجرای دستورات داکر نیاز به استفاده از <code class="prettyprint prettyprinted"><span class="pln">sudo</span><span class="pun">‍</span></code> دارید.</p>
+
+                        <p>برای راحتی بیشتر در استفاده از دستورات داکر میتوانید گروهی به نام <code class="prettyprint prettyprinted"><span class="pln">docker</span></code> بسازید و کاربرانی را که قصد تعامل با موتور داکر دارند به این گروه اضافه کنید تا بتوانند بدون نیاز به <code class="prettyprint prettyprinted"><span class="pln">sudo</span></code> این کار را انجام دهند. در این حالت مالکیت Unix socket مربوطه نیز توسط سرویس داکر به این گروه کاربری داده میشود.</p>
+
+                        <p><strong>نکته:</strong> دقت کنید که از نظر سطح امنیت، تمام کاربرانی که عضو گروه کاربری <code class="prettyprint prettyprinted"><span class="pln">docker</span></code> باشند عملا دسترسی <code class="prettyprint prettyprinted"><span class="pln">root</span></code> خواهند داشت.</p>
+
+                        <p>برای ایجاد این گروه و اضافه کردن یک کاربر به آن میتوانید مراحل زیر را طی کنید:</p>
+
+                        <ol>
+                            <li><p>ابتدا گروه را ایجاد کنید:</p>
+
+                                <pre><code class="prettyprint prettyprinted"><span class="pln">sudo groupadd docker</span></code></pre></li>
+                            <li><p>سرویس داکر را باز اجرا کنید:</p>
+
+                                <pre><code class="prettyprint prettyprinted"><span class="pln">sudo service docker restart</span></code></pre></li>
+                            <li><p>سپس کاربر مورد نظرتان را به گروه اضافه کنید:</p>
+
+                                <pre><code class="prettyprint prettyprinted"><span class="pln">sudo usermod </span><span class="pun">-</span><span class="pln">aG docker your</span><span class="pun">-</span><span class="pln">user</span></code></pre></li>
+                            <li><p>اگر قبلا با این کاربر وارد شده اید باید حالا خارج و دوباره وارد شوید.</p></li>
+                            <li><p>با اجرای دستور زیر میتوانید مطمئن شوید همه چیز به درستی انجام شده است:</p>
+
+                                <pre><code class="prettyprint prettyprinted"><span class="pln">docker run hello</span><span class="pun">-</span><span class="pln">world</span></code></pre></li>
+                        </ol>
+
+                        <p>برای آشنایی بیشتر با این فناوری میتوانید مقاله های <a href="http://elastico.io/blog/docker-basic-concepts.html">مفاهیم پایه ای داکر</a> و <a href="http://elastico.io/blog/useful-docker-commands.html">دستورات پرکاربرد داکر</a> را مطالعه کنید.</p>
+
+                        <p>اگر فکر میکنید برای کار با داکر نیاز به کمک بیشتری دارید و یا علاقه مند هستید در آینده به یک سرور مجازی برای یادگیری آسانتر دسترسی داشته باشید میتوانید <a href="https://docs.google.com/forms/d/1fIYtXM6UaV5pFRBAkNKVNHzBnUg157Sedxds5xYPWDI/viewform?usp=send_form">این فرم کوتاه</a> را پر کنید تا به یک گروه Slack به نام <strong>elastico-users</strong> که برای همین کار ایجاد شده است دعوت شوید. در آنجا میتوانید از اعضای با تجربه تر گروه هم کمک بگیرید.</p>
+
+                    </article>
+                    <hr/>
+
+                    <article class="mdl-tabs__panel" id="install-docker-windows.html">
+                        <h4>طریقه نصب داکر روی ویندوز</h4>
+
+                        <p>کاربران ویندوز میتوانند از Docker Toolbox برای نصب داکر استفاده کنند. Docker Toolbox ابزارهای زیر را در اختیار شما قرار میدهد:</p>
+
+                        <ul>
+                            <li>ابزار خط فرمان داکر (Docker CLI) برای تعامل با موتور داکر (Docker Engine) جهت ایجاد و تعامل با کانتینرها</li>
+                            <li>ابزار ماشین داکر (Docker Machine) برای ایجاد ماشینهای مجازی که امکان اجرای کانتینرها را روی ویندوز دارند</li>
+                            <li>ابزار داکر کامپوز (Docker Compose) برای اجرای دستورات docker-compose</li>
+                            <li>محیط واسط گرافیکی Kitematic</li>
+                            <li>پوسته شروع سریع داکر (Docker QuickStart) برای ایجاد سریع یک خط فرمان آماده برای اجرای دستورات داکر</li>
+                            <li>نرم افزار متن باز Oracle VM VirtualBox</li>
+                        </ul>
+
+                        <p>به خاطر اینکه موتور داکر (Docker Engine)‌ از ویژگیهای خاص هسته لینوکس استفاده میکند شما نمیتوانید آن را مستقیم روی ویندوز اجرا کنید. به همین دلیل نیاز است که ابتدا با استفاده از دستور ماشین داکر (<code class="prettyprint prettyprinted"><span class="pln">docker</span><span class="pun">-</span><span class="pln">machine</span></code>) یک ماشین مجازی کوچک لینوکس درست کنید و سپس از طریق آن داکر را اجرا کنید.</p>
+
+                        <h4>قدم ۱: نسخه ویندوز خود را چک کنید</h4>
+
+                        <p>برای اینکه بتوانید داکر را اجرا کنید، ماشین شما باید نسخه ۶۴ بیتی ویندوز ۷ یا بالاتر را داشته باشد. همچنین باید مطمئن شوید که امکان virtualization برای سیستم شما فعال شده است.</p>
+
+                        <p>برای اطمینان از داشتن این پیش نیازها، میتوانید کارهای زیر را انجام دهید:</p>
+
+                        <ol>
+                            <li>به Control Panel در قسمت System and Security و بعد System بروید و نسخه ویندوز خود را چک کنید.</li>
+                            <li>ابزار مایکروسافت برای تشخیص امکان virtualization را از <a href="https://www.microsoft.com/en-au/download/details.aspx?id=592">اینجا</a> دانلود و نصب کنید. همچنین در ویندوز ۸ میتوانید این تنظیم را از طریق Start &gt; Task Manager &gt; Performance tab و در قسمت CPU مشاهده کنید.</li>
+                            <li>با استفاده از راهنمایی <a href="https://support.microsoft.com/en-us/kb/827218">این مقاله</a> میتوانید مطمئن شوید که نسخه ویندوز شما ۶۴ بیتی است.</li>
+                        </ol>
+
+                        <h4>قدم ۲: جعبه ابزار داکر (Docker Toolbox) را نصب کنید</h4>
+
+                        <p>اگر در حال حاضر نسخه ای از نرم افزار VirtualBox را نصب شده دارید نیازی نیست آن را دوباره نصب کنید، فقط لازم است هنگام نصب جعبه ابزار داکر آن را ببندید.</p>
+
+                        <ol>
+                            <li>به صفحه <a href="https://www.docker.com/toolbox">Docker Toolbox</a> بروید و آن را دانلود کنید.</li>
+                            <li>برنامه Installer را اجرا کنید. اگر ویندوز از شما خواست که اجازه تغییر سیستم را به این برنامه بدهید، گزینه Yes را انتخاب کنید.</li>
+                            <li>برای حالت پیش فرض، در مراحل بعدی گزینه Next را انتخاب کنید و در نهایت گزینه Install.</li>
+                            <li>پس از نصب موفقیت آمیز، صفحه ای ظاهر میشود که در آن دکمه Finish وجود دارد و میتوانید آن را بفشارید.</li>
+                        </ol>
+
+                        <h4>قدم ۳: نرم افزارهای نصب شده را بررسی کنید</h4>
+
+                        <p>تمامی ابزارهای نصب شده، در پوشه Applications قرار میگیرند. در این مرحله آنها را یک به یک تست میکنیم:</p>
+
+                        <ol>
+                            <li>روی Desktop و یا در پوشه Applications ابزار Docker Toolbox را پیدا کنید و آن را اجرا کنید.</li>
+                            <li>این ابزار برای شما یک خط فرمان آماده برای اجرای دستورات داکر باز میکند. اگر سیستم از شما خواست که به VirtualBox اجازه تغییرات در سیستم را بدهید گزینه Yes را انتخاب کنید. این خط فرمان یک محیط <code class="prettyprint prettyprinted"><span class="pln">bash</span></code> که خاص لینوکس است را در ویندوز برای شما فراهم میکند چون مورد نیاز داکر است.</li>
+                            <li>دستور <code class="prettyprint prettyprinted"><span class="pln">docker run hello</span><span class="pun">-</span><span class="pln">world</span></code> را تایپ و اجرا کنید.</li>
+                        </ol>
+
+                        <p>اجرای کامل این دستور مدتی طول میکشد و اگر همه چیز به خوبی پیش برود خروجی زیر را مشاهده میکنید:</p>
+
+<pre><code class="prettyprint prettyprinted"><span class="pln">$ docker run hello</span><span class="pun">-</span><span class="pln">world
+</span><span class="typ">Unable</span><span class="pln"> to find image </span><span class="str">'hello-world:latest'</span><span class="pln"> locally
+</span><span class="typ">Pulling</span><span class="pln"> repository hello</span><span class="pun">-</span><span class="pln">world
+</span><span class="lit">91c95931e552</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Download</span><span class="pln"> complete
+a8219747be10</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Download</span><span class="pln"> complete
+</span><span class="typ">Status</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Downloaded</span><span class="pln"> newer image </span><span class="kwd">for</span><span class="pln"> hello</span><span class="pun">-</span><span class="pln">world</span><span class="pun">:</span><span class="pln">latest
+</span><span class="typ">Hello</span><span class="pln"> </span><span class="kwd">from</span><span class="pln"> </span><span class="typ">Docker</span><span class="pun">.</span><span class="pln">
+</span><span class="typ">This</span><span class="pln"> message shows that your installation appears to be working correctly</span><span class="pun">.</span><span class="pln">
+
+</span><span class="typ">To</span><span class="pln"> generate </span><span class="kwd">this</span><span class="pln"> message</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Docker</span><span class="pln"> took the following steps</span><span class="pun">:</span><span class="pln">
+ </span><span class="lit">1.</span><span class="pln"> </span><span class="typ">The</span><span class="pln"> </span><span class="typ">Docker</span><span class="pln"> </span><span class="typ">Engine</span><span class="pln"> CLI client contacted the </span><span class="typ">Docker</span><span class="pln"> </span><span class="typ">Engine</span><span class="pln"> daemon</span><span class="pun">.</span><span class="pln">
+ </span><span class="lit">2.</span><span class="pln"> </span><span class="typ">The</span><span class="pln"> </span><span class="typ">Docker</span><span class="pln"> </span><span class="typ">Engine</span><span class="pln"> daemon pulled the </span><span class="str">"hello-world"</span><span class="pln"> image </span><span class="kwd">from</span><span class="pln"> the </span><span class="typ">Docker</span><span class="pln"> </span><span class="typ">Hub</span><span class="pun">.</span><span class="pln">
+    </span><span class="pun">(</span><span class="typ">Assuming</span><span class="pln"> it was </span><span class="kwd">not</span><span class="pln"> already locally available</span><span class="pun">.)</span><span class="pln">
+ </span><span class="lit">3.</span><span class="pln"> </span><span class="typ">The</span><span class="pln"> </span><span class="typ">Docker</span><span class="pln"> </span><span class="typ">Engine</span><span class="pln"> daemon created a </span><span class="kwd">new</span><span class="pln"> container </span><span class="kwd">from</span><span class="pln"> that image which runs the executable that produces the output you are currently reading</span><span class="pun">.</span><span class="pln">
+ </span><span class="lit">4.</span><span class="pln"> </span><span class="typ">The</span><span class="pln"> </span><span class="typ">Docker</span><span class="pln"> </span><span class="typ">Engine</span><span class="pln"> daemon streamed that output to the </span><span class="typ">Docker</span><span class="pln"> </span><span class="typ">Engine</span><span class="pln"> CLI client</span><span class="pun">,</span><span class="pln"> which sent it to your terminal</span><span class="pun">.</span><span class="pln">
+
+</span><span class="typ">To</span><span class="pln"> </span><span class="kwd">try</span><span class="pln"> something more ambitious</span><span class="pun">,</span><span class="pln"> you can run an </span><span class="typ">Ubuntu</span><span class="pln"> container </span><span class="kwd">with</span><span class="pun">:</span><span class="pln">
+ $ docker run </span><span class="pun">-</span><span class="pln">it ubuntu bash
+
+</span><span class="typ">For</span><span class="pln"> more examples </span><span class="kwd">and</span><span class="pln"> ideas</span><span class="pun">,</span><span class="pln"> visit</span><span class="pun">:</span><span class="pln">
+ https</span><span class="pun">:</span><span class="com">//docs.docker.com/userguide/</span></code></pre>
+
+                        <p>با دیدن این خروجی میتوانید مطمئن شوید که عمل نصب به درستی انجام شده و جعبه ابزار داکر شما قابل استفاده است.</p>
+
+                        <p>اگر به هنگام اجرای کانتینرها با مشکلاتی برای دانلود image ها از Docker Hub مواجه شدید، میتوانید با تنظیم یک mirror به صورتی که در <a href="https://groups.google.com/forum/#!topic/software-taak/xRmFWrozRoo">این گروه</a> گفته شده، دوباره این کار را امتحان کنید.
+                            اگر فکر میکنید برای کار با داکر نیاز به کمک بیشتری دارید و یا علاقه مند هستید که در آینده به یک سرور مجازی برای یادگیری داکر دسترسی داشته باشید میتوانید <a href="https://docs.google.com/forms/d/1fIYtXM6UaV5pFRBAkNKVNHzBnUg157Sedxds5xYPWDI/viewform?usp=send_form">این فرم کوتاه</a> را پر کنید تا به یک گروه Slack به نام <strong>elastico-users</strong> که برای همین کار ایجاد شده است دعوت شوید. در آنجا میتوانید از اعضای با تجربه تر گروه هم کمک بگیرید.</p>
+
+                    </article>
+                </div>
+            </section>
+        </div>
+        <div class="mdl-layout__tab-panel" id="registration">
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--6dp">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <div>
+                        <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+                            <h2 class="mdl-card__title-text">ثبت نام برای سرویس هاب الستیکو (نسخه آزمایشی)</h2>
+                        </div>
+                        <ul class="mdl-card__supporting-text">
+                            <form action="#">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" id="email"/>
+                                    <label class="mdl-textfield__label" for="email">ایمیل</label>
+                                </div>
+
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" id="username"/>
+                                    <label class="mdl-textfield__label" for="username">نام کاربری درخواستی (بین ۶ تا ۱۵
+                                        حرف
+                                        یا
+                                        عدد)</label>
+                                </div>
+
+
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" id="company"/>
+                                    <label class="mdl-textfield__label" for="company">نام موسسه تحصیلی یا شرکت محل
+                                        کار</label>
+                                </div>
+
+                                <ul class="demo-list-item mdl-list">
+                                    <div class="big">میزان آشنایی شما با تکنولوژی داکر چقدر است؟</div>
+                                    <li class="mdl-list__item">
+
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <span class="mdl-radio__label">                                مبتدی</span>
+                                            <input class="mdl-radio__button" type="radio" id="novice"
+                                                   name="proficiency"/>
+                                        </label>
+                                    </li>
+                                    <li class="mdl-list__item">
+
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <span class="mdl-radio__label">                                متوسط</span>
+                                            <input class="mdl-radio__button" type="radio" id="intermediate"
+                                                   name="proficiency"/>
+                                        </label>
+                                    </li>
+                                    <li class="mdl-list__item">
+
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <span class="mdl-radio__label">                                پیشرفته</span>
+                                            <input class="mdl-radio__button" type="radio" id="expert"
+                                                   name="proficiency"/>
+                                        </label>
+                                    </li>
+                                    <li class="mdl-list__item">
+
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <span class="mdl-radio__label">                                آشنایی ندارم</span>
+                                            <input class="mdl-radio__button" type="radio" id="nil" name="proficiency"/>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <ul class="demo-list-item mdl-list">
+                                    <div class="big">نقش فعلی شما در محل کار چیست؟</div>
+                                    <li class="mdl-list__item">
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <span class="mdl-radio__label">                                توسعه دهنده نرم افزار (Software Developer)</span>
+                                            <input class="mdl-radio__button" type="radio" id="sd" name="role"/>
+                                        </label>
+                                    </li>
+                                    <li class="mdl-list__item">
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <span class="mdl-radio__label">                                راهبر سیستم (System Administrator)</span>
+                                            <input class="mdl-radio__button" type="radio" id="sa" name="role"/>
+                                        </label>
+                                    </li>
+                                    <li class="mdl-list__item">
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <span class="mdl-radio__label">   مدیر (Manager)</span>
+                                            <input class="mdl-radio__button" type="radio" id="manager" name="role"/>
+                                        </label>
+                                    </li>
+                                    <li class="mdl-list__item">
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <span class="mdl-radio__label">Other:</span>
+                                            <input class="mdl-radio__button" type="radio" id="other" name="role"/>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <ul class="demo-list-item mdl-list">
+                                    <div class="big">آیا در محل کار فعلی خود از داکر استفاده میکنید؟</div>
+                                    <li class="mdl-list__item">
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <input class="mdl-radio__button" type="radio" id="prod" name="usage"/>
+                                            <span class="mdl-radio__label">بله، در محیط عملیاتی</span>
+                                        </label>
+                                    </li>
+                                    <li class="mdl-list__item">
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <span class="mdl-radio__label">بله، البته تنها در محیطهای توسعه و تست</span>
+                                            <input class="mdl-radio__button" type="radio" id="qa" name="usage"/>
+                                        </label>
+                                    </li>
+                                    <li class="mdl-list__item">
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <span class="mdl-radio__label">خیر</span>
+                                            <input class="mdl-radio__button" type="radio" id="none" name="usage"/>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <ul class="demo-list-item mdl-list">
+                                    <div class="big">
+                                        در صورتی که یک یا چند درس آموزشی آنلاین فارسی شامل کتاب، تمرینات عملی، سوال و
+                                        جواب و
+                                        مدرک تکمیل دوره برای فناوری داکر تولید شود برای شما ارزش مالی گذراندن این دوره و
+                                        گرفتن
+                                        مدرک آن چقدر است؟
+                                    </div>
+                                    <li class="mdl-list__item">
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <span class="mdl-radio__label">۲۰ هزار تومان</span>
+                                            <input class="mdl-radio__button" type="radio" id="20" name="worth"/>
+                                        </label>
+                                    </li>
+                                    <li class="mdl-list__item">
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <span class="mdl-radio__label">۵۰ هزار تومان</span>
+                                            <input class="mdl-radio__button" type="radio" id="50" name="worth"/>
+                                        </label>
+                                    </li>
+                                    <li class="mdl-list__item">
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <span class="mdl-radio__label">۱۰۰ هزار تومان یا بیشت</span>
+                                            <input class="mdl-radio__button" type="radio" id="100" name="worth"/>
+                                        </label>
+                                    </li>
+                                    <li class="mdl-list__item">
+                                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
+                                            <span class="mdl-radio__label">Other:</span>
+                                            <input class="mdl-radio__button" type="radio" id="worthOther" name="worth"/>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </form>
+                        </ul>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                                ثبت نام
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="mdl-mega-footer">
+            <div class="mdl-mega-footer--bottom-section">
+                <div class="mdl-logo">
+                    کلیه حقوق محفوظ است. بازنشر این مطلب با ذکر آدرس این سایت مجاز است.
+                </div>
+            </div>
+        </footer>
+    </main>
+</div>
+<a href="https://github.com/google/material-design-lite/blob/master/templates/text-only/" target="_blank"
+   id="view-source"
+   class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View
+    Source</a>
+<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-73618104-1', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-73618104-1', 'auto');
+    ga('send', 'pageview');
 
 </script>
-
-<title>Elastico Blog</title>
-</head>
-<body>
-
-<h1>الستیکو</h1>
-
-<p>در این سایت راجع به Docker و Kubernetes خواهید شنید:</p>
-
-<ul>
-    <li><a href="/blog/why-you-need-docker.html">چرا به داکر نیاز دارید؟</a></li>
-    <li><a href="/blog/docker-basic-concepts.html">مفاهیم پایه ای داکر</a></li>
-    <li><a href="/blog/useful-docker-commands.html">دستورات پرکاربرد داکر</a></li>
-    <li><a href="/blog/jboss-docker-tutorial.html">شیوه استفاده از داکر برای اجرای یک برنامه تحت وب جاوا</a></li>
-    <li><a href="/blog/how-to-write-dockerfile.html">روش نوشتن یک Dockerfile</a></li>
-    <li><a href="/blog/install-docker-centos7.html">شیوه نصب داکر روی لینوکس CentOS 7</a></li>
-    <li><a href="/blog/install-docker-windows.html">طریقه نصب داکر روی ویندوز</a></li>
-</ul>
-
 </body>
 </html>
